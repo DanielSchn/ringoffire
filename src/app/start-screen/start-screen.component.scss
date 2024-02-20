@@ -9,5 +9,26 @@
 
     >img {
         width: 100%;
+        max-width: 1440px;
+    }
+
+}
+
+.start-button-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 340px;
+    display: flex;
+    justify-content: center;
+
+    >img {
+        width: 340px;
+        height: auto;
+
+        &:hover {
+            filter: brightness(1.5);
+            cursor: pointer;
+        }
     }
 }
