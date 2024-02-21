@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-// import { Game } from './../models/game';
 import { GameService } from '../game.service';
 
 @Component({
@@ -12,8 +11,6 @@ import { GameService } from '../game.service';
 })
 export class GameComponent implements OnInit {
   pickCardAnimation = false;
-
-  // game!: Game;
   game = inject(GameService);
   currentCard: string = '';
 
@@ -37,8 +34,10 @@ export class GameComponent implements OnInit {
       }
       this.pickCardAnimation = true;
       setTimeout(() => {
+        this.game.playedCards.push(this.currentCard);
         this.pickCardAnimation = false;
-      }, 1500);
+        console.log(this.game);
+      }, 1300);
     }
   }
 }
