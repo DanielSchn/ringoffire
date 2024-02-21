@@ -10,10 +10,12 @@ import { GameService } from '../game.service';
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })
-export class GameComponent implements OnInit{
+export class GameComponent implements OnInit {
   pickCardAnimation = false;
+
   // game!: Game;
   game = inject(GameService);
+  currentCard: string = '';
 
   constructor() { }
 
@@ -26,7 +28,17 @@ export class GameComponent implements OnInit{
     console.log(this.game);
   }
 
+
   takeCard() {
-    this.pickCardAnimation = true;
+    if (!this.pickCardAnimation) {
+      let card = this.game.stack.pop();
+      if (card != undefined) {
+        this.currentCard = card;
+      }
+      this.pickCardAnimation = true;
+      setTimeout(() => {
+        this.pickCardAnimation = false;
+      }, 1500);
+    }
   }
 }
