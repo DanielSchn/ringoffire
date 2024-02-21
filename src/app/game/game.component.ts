@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { GameService } from '../game.service';
 import { PlayerComponent } from '../player/player.component';
+import { Game } from '../models/game';
 
 @Component({
   selector: 'app-game',
@@ -12,7 +12,7 @@ import { PlayerComponent } from '../player/player.component';
 })
 export class GameComponent implements OnInit {
   pickCardAnimation = false;
-  game = inject(GameService);
+  game!: Game;
   currentCard: string = '';
 
   constructor() { }
@@ -22,7 +22,7 @@ export class GameComponent implements OnInit {
   }
 
   newGame() {
-    this.game = new GameService();
+    this.game = new Game();
     console.log(this.game);
   }
 
