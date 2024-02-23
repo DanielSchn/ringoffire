@@ -49,6 +49,13 @@
     bottom: 64px;
 }
 
+.rule-card-pos {
+    position: absolute;
+    bottom: 32px;
+    left: 164px;
+    right: 164px;
+}
+
 @keyframes pick-card-animation {
     0% {
         transform: scale(1);
