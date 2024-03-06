@@ -11,13 +11,14 @@ import { RuleCardComponent } from '../rule-card/rule-card.component';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Firestore, collection, doc, onSnapshot, addDoc, updateDoc, deleteDoc, query, limit, where, QuerySnapshot } from '@angular/fire/firestore';
+import { PlayerMobileComponent } from '../player-mobile/player-mobile.component';
 
 
 
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [CommonModule, PlayerComponent, MatButtonModule, MatIconModule, MatDialogModule, RuleCardComponent],
+  imports: [CommonModule, PlayerComponent, MatButtonModule, MatIconModule, MatDialogModule, RuleCardComponent, PlayerMobileComponent],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })

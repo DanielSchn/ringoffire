@@ -44,17 +44,29 @@
     z-index: 1;
 }
 
+.player-mobile-position {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 100px;
+}
+
 .btn-add {
     position: absolute;
-    right: 64px;
-    bottom: 64px;
+    right: 8px;
+    bottom: 208px;
 }
 
 .rule-card-pos {
     position: absolute;
-    bottom: 32px;
-    left: 164px;
-    right: 164px;
+    bottom: 16px;
+    left: 8px;
+    right: 8px;
+    height: 180px;
 }
 
 @keyframes pick-card-animation {
